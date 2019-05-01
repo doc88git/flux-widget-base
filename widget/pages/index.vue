@@ -1,34 +1,33 @@
 <template>
   <section class="container">
     <div>
-      <logo />
-      <h1 class="title">
-        core-base
-      </h1>
-      <h2 class="subtitle">
-        Flux
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green"
-          >Documentation</a
-        >
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-          >GitHub</a
-        >
+      <h1 class="title">core-base</h1>
+      <h2 class="subtitle">Flux</h2>
+      <div>Sum: {{ sum }}</div>
+      <div>
+        <button @click="addToSum">+add</button>
+      </div>
+      <div>
+        <img width="100px" src="~/assets/images/logo-nuxt.png" />
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import { mapGetters } from 'vuex'
 
 export default {
-  components: {
-    Logo
+  computed: {
+    ...mapGetters({ sum: ['counter/sum'] })
+  },
+  mounted() {
+    this.addToSum()
+  },
+  methods: {
+    addToSum() {
+      this.$store.dispatch('counter/increment')
+    }
   }
 }
 </script>

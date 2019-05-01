@@ -1,6 +1,8 @@
 const pkg = require('./package')
 
 module.exports = {
+  srcDir: 'widget/',
+
   mode: 'universal',
 
   /*
