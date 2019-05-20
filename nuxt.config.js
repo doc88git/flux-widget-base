@@ -26,12 +26,15 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: [],
+  css: [
+    { src: 'flux/src/assets/f-style-guide.scss', lang: 'sass' },
+    { src: '@/assets/scss/main.scss', lang: 'sass' }
+  ],
 
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~/plugins/style-guide'],
 
   /*
    ** Nuxt.js modules
@@ -52,6 +55,7 @@ module.exports = {
    ** Build configuration
    */
   build: {
+    transpile: ['flux'],
     /*
      ** You can extend webpack config here
      */

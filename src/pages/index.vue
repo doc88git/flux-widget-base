@@ -8,7 +8,7 @@
         <button @click="addToSum">+add</button>
       </div>
       <div>
-        <img width="100px" src="~/assets/images/logo-nuxt.png" />
+        <f-icon name="extension" type="outlined" lib="material" />
       </div>
     </div>
   </section>
@@ -18,11 +18,14 @@
 import { mapGetters } from 'vuex'
 
 export default {
+  name: 'HomePage',
   computed: {
     ...mapGetters({ sum: ['counter/sum'] })
   },
   mounted() {
     this.addToSum()
+    console.log(this.$f)
+    console.log(this)
   },
   methods: {
     addToSum() {
