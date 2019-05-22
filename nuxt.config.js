@@ -28,8 +28,14 @@ module.exports = {
    ** Global CSS
    */
   css: [
-    { src: 'flux-style-guide/src/assets/f-style-guide.scss', lang: 'sass' },
-    { src: '@/assets/scss/main.scss', lang: 'sass' }
+    {
+      src: '@doc88/flux-style-guide/src/assets/f-style-guide.scss',
+      lang: 'sass'
+    },
+    {
+      src: '@/assets/scss/main.scss',
+      lang: 'sass'
+    }
   ],
 
   /*
@@ -56,7 +62,7 @@ module.exports = {
    ** Build configuration
    */
   build: {
-    transpile: ['flux-style-guide'],
+    transpile: ['@doc88/flux-style-guide'],
     postcss: {
       plugins: {
         'postcss-url': {},
