@@ -1,3 +1,4 @@
+const path = require('path')
 const pkg = require('./package')
 
 module.exports = {
@@ -27,7 +28,7 @@ module.exports = {
    ** Global CSS
    */
   css: [
-    { src: 'flux/src/assets/f-style-guide.scss', lang: 'sass' },
+    { src: 'flux-style-guide/src/assets/f-style-guide.scss', lang: 'sass' },
     { src: '@/assets/scss/main.scss', lang: 'sass' }
   ],
 
@@ -55,7 +56,26 @@ module.exports = {
    ** Build configuration
    */
   build: {
-    transpile: ['flux'],
+    transpile: ['flux-style-guide'],
+    postcss: {
+      plugins: {
+        'postcss-url': {},
+        tailwindcss: path.resolve(__dirname, './flux.config.js'),
+        cssnano: {
+          preset: 'default',
+          discardComments: { removeAll: true },
+          zIndex: false
+        }
+      },
+      preset: {
+        stage: 0,
+        autoprefixer: {
+          cascade: false,
+          grid: true
+        }
+      }
+    },
+
     /*
      ** You can extend webpack config here
      */

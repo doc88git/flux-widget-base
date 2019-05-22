@@ -9,6 +9,7 @@
       </div>
       <div>
         <f-icon name="extension" type="outlined" lib="material" />
+        <f-button label="label" icon="close" />
       </div>
     </div>
   </section>
@@ -25,7 +26,6 @@ export default {
   mounted() {
     this.addToSum()
     console.log(this.$f)
-    console.log(this)
   },
   methods: {
     addToSum() {
