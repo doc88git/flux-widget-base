@@ -18,12 +18,12 @@
     "build": "nuxt build"
   },
   "dependencies": {
+    "@doc88/flux-style-guide": "latest",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^2.6.0",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
     "express": "^4.16.4",
-    "@doc88/flux-style-guide": "^0.0.0-alpha16",
     "node-sass": "^4.12.0",
     "nuxt": "^2.4.0",
     "postcss-loader": "^3.0.0",
