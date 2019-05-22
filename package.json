@@ -23,7 +23,7 @@
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
     "express": "^4.16.4",
-    "flux-style-guide": "git+ssh://git@gitlab-cloud.doc88.com.br:flux/widgets/style-guide#master",
+    "@doc88/flux-style-guide": "^0.0.0-alpha16",
     "node-sass": "^4.12.0",
     "nuxt": "^2.4.0",
     "postcss-loader": "^3.0.0",

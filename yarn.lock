@@ -706,6 +706,15 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
+"@doc88/flux-style-guide@^0.0.0-alpha16":
+  version "0.0.0-alpha16"
+  resolved "https://registry.yarnpkg.com/@doc88/flux-style-guide/-/flux-style-guide-0.0.0-alpha16.tgz#a09ebee7c5991557f487431c641590e473718ecc"
+  integrity sha512-GW9TsWHCiNaAVS45LkvZXE9gmYOfjlbIaatGNW0na6jF8P7gWRr3NN+111RM1dKhSM8x+gk2h2uOHXbx+TK/eA==
+  dependencies:
+    core-js "^2.6.5"
+    tailwindcss "^1.0.1"
+    vue "^2.6.10"
+
 "@jest/console@^24.7.1":
   version "24.7.1"
   resolved "https://registry.yarnpkg.com/@jest/console/-/console-24.7.1.tgz#32a9e42535a97aedfe037e725bd67e954b459545"
@@ -4533,14 +4542,6 @@ flush-write-stream@^1.0.0:
   dependencies:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
-
-"flux-style-guide@git+ssh://git@gitlab-cloud.doc88.com.br:flux/widgets/style-guide#master":
-  version "0.0.0-alpha16"
-  resolved "git+ssh://git@gitlab-cloud.doc88.com.br:flux/widgets/style-guide#172a37cf6d7094fdf64b3815dbe7ab1af88577fe"
-  dependencies:
-    core-js "^2.6.5"
-    tailwindcss "^1.0.1"
-    vue "^2.6.10"
 
 follow-redirects@^1.0.0, follow-redirects@^1.3.0:
   version "1.7.0"
