@@ -1,69 +1,60 @@
 <template>
-  <section class="container">
-    <div>
-      <h1 class="title">core-base</h1>
-      <h2 class="subtitle">Flux</h2>
-      <div>Sum: {{ sum }}</div>
-      <div>
-        <button @click="addToSum">+add</button>
-      </div>
-      <div>
-        <f-icon name="extension" type="outlined" lib="material" />
-        <f-button label="label" icon="close" />
-      </div>
-    </div>
-  </section>
+  <f-container class="content">
+    <div class="flux-logo"><span>[</span>Flux<span>]</span>Widget Base</div>
+    <p class="version"></p>
+
+    <ul class="menu">
+      <li v-for="(item, index) in menuItems" :key="index">
+        <a target="_blank" :href="item.url">
+          {{ item.name }}
+        </a>
+      </li>
+    </ul>
+  </f-container>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 export default {
-  name: 'HomePage',
-  computed: {
-    ...mapGetters({ sum: ['counter/sum'] })
-  },
-  mounted() {
-    this.addToSum()
-    console.log(this.$f)
-  },
-  methods: {
-    addToSum() {
-      this.$store.dispatch('counter/increment')
-    }
-  }
+  data: () => ({
+    menuItems: [
+      {
+        name: 'Documentation',
+        url: 'https://github.com/doc88git/flux-widget-base'
+      },
+      {
+        name: 'Style Guide',
+        url: 'https://github.com/doc88git/flux-style-guide'
+      },
+      {
+        name: 'Flux-CLI',
+        url: 'https://github.com/doc88git/flux-cli'
+      },
+      {
+        name: 'Doc88',
+        url: 'http://doc88.com.br'
+      }
+    ]
+  })
 }
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+<style lang="scss">
+.content {
+  @apply flex flex-wrap mx-auto items-center justify-center h-screen;
+  .flux-logo {
+    @apply w-full text-center m-0 text-5xl text-gray-500;
+    span {
+      @apply text-green-300 text-6xl mx-2;
+    }
+  }
+  ul.menu {
+    @apply w-full text-center uppercase;
+    li {
+      @apply text-gray-700 inline mx-10;
+      a:hover {
+        @apply text-gray-600;
+      }
+    }
+  }
 }
 </style>
