@@ -59,8 +59,26 @@ module.exports = {
    ** Axios module configuration
    */
   axios: {
-    baseURL: process.env.BASE_URL
+    baseURL: process.env.APP_API_URL
     // See https://github.com/nuxt-community/axios-module#options
+  },
+
+  oauth: {
+    sessionName: `${pkg.name}@${pkg.version}`,
+    secretKey: `${process.env.APP_API_CLIENT_SECRET}`, // Provide a secret key to sign the encrypted cookie. Do not leak this!
+    oauthHost: process.env.APP_API_URL,
+    oauthClientID: process.env.APP_API_CLIENT_ID,
+    oauthClientSecret: process.env.APP_API_CLIENT_SECRET,
+    onLogout: (req, res) => {
+      // do something after logging out
+      return { req, res }
+    },
+    fetchUser: (accessToken, request) => {
+      // do something to return the user
+      // const user = User.findByToken(accessToken, request)
+      // return user
+      return { accessToken, request }
+    }
   },
 
   /*
