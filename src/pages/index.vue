@@ -42,17 +42,20 @@ export default {
 .content {
   @apply flex flex-wrap mx-auto items-center justify-center h-screen;
   .flux-logo {
-    @apply w-full text-center m-0 text-5xl text-gray-500;
+    @apply w-full text-center m-0 text-5xl;
+    color: theme('colors.primary');
     span {
-      @apply text-green-300 text-6xl mx-2;
+      @apply text-6xl mx-2;
+      color: theme('colors.secondary');
     }
   }
   ul.menu {
     @apply w-full text-center uppercase;
     li {
-      @apply text-gray-700 inline mx-10;
+      @apply inline mx-10;
+      color: theme('colors.secondary');
       a:hover {
-        @apply text-gray-600;
+        color: theme('colors.black');
       }
     }
   }
