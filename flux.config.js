@@ -94,7 +94,8 @@ module.exports = {
           preset: 'default',
           discardComments: { removeAll: true },
           zIndex: false
-        }
+        },
+        autoprefixer: {}
       },
       preset: {
         stage: 0,
